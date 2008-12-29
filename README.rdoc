@@ -18,9 +18,9 @@ This requires a config file placed in the user's home directory:
 	backend: yaml
 	accounts:
 	  - name: jnunemaker
-		last_max_id: 0
+	    last_max_id: 0
 	  - name: fuzzymonk
-		last_max_id: 0
+	    last_max_id: 0
 
 FIX: You can setup twitter_archive as a cron job?
 
