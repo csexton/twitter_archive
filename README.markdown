@@ -1,38 +1,32 @@
 = twitter_archive
 
-* http://github.com/csexton/twitter_archive
+* FIX (url)
 
 == DESCRIPTION:
 
-Twitter Archive is a little utility gem that will enables archiving twitter history.
+FIX (describe your package)
 
 == FEATURES/PROBLEMS:
 
-Archive your twitter messages.
+* FIX (list of features or problems)
 
 == SYNOPSIS:
 
-This requires a config file placed in the user's home directory:
+  FIX (code sample of usage)
 
-~/twitter_archive.yml
-	backend: yaml
-	accounts:
-	  - name: jnunemaker
-		last_max_id: 0
-	  - name: fuzzymonk
-		last_max_id: 0
+== REQUIREMENTS:
 
-FIX: You can setup twitter_archive as a cron job?
+* FIX (list of requirements)
 
 == INSTALL:
 
-* FIX: (sudo gem install twitter_archive)
+* FIX (sudo gem install, anything else)
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 Christopher Sexton
+Copyright (c) 2008 FIXME full name
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
