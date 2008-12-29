@@ -1,0 +1,132 @@
+--- 
+max_id: 1083275701
+since_id: 0
+results: 
+- text: "@beejpowers glad it was working for you!"
+  from_user: fuzzymonk
+  to_user: beejpowers
+  to_user_id: 2203390
+  id: 1083002747
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Sun, 28 Dec 2008 23:38:46 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: Testing my twitter app.
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1082726875
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Sun, 28 Dec 2008 20:14:53 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: Chicken nugget picnic FTW!
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1082568072
+  iso_language_code: de
+  from_user_id: 44397
+  created_at: Sun, 28 Dec 2008 18:12:25 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: Riding trikes.
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1082523321
+  iso_language_code: nl
+  from_user_id: 44397
+  created_at: Sun, 28 Dec 2008 17:36:59 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: Nursery duty. 9:5 helper to toddler ratio.  Why did we wake up so early?
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1082306470
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Sun, 28 Dec 2008 14:24:12 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: "@beejpowers I need to go back to work to recover from the holiday."
+  from_user: fuzzymonk
+  to_user: beejpowers
+  to_user_id: 2203390
+  id: 1081719755
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Sun, 28 Dec 2008 03:00:30 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: Where can I get one? http://tinyurl.com/7dxzrv
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1081473926
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Sat, 27 Dec 2008 23:35:21 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: Don't like pandemonium. Go away
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1081233677
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Sat, 27 Dec 2008 20:08:54 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: "[dotfiles] http://is.gd/dBpg Christopher Sexton - Removing the os specific scripts"
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1079851223
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Fri, 26 Dec 2008 21:18:11 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: "[dotfiles] http://is.gd/dBpf Christopher Sexton - Auto linking files in home/"
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1079851212
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Fri, 26 Dec 2008 21:18:10 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: "[dotfiles] http://is.gd/dBph Christopher Sexton - Added colors and fixed link if"
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1079851233
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Fri, 26 Dec 2008 21:18:09 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: "[dotfiles] http://is.gd/dAcc Christopher Sexton - Added check if the file exists before trying to rename it."
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1079644342
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Fri, 26 Dec 2008 18:31:37 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: "'Nene' is a derivative of 'Neal'"
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1079585237
+  iso_language_code: it
+  from_user_id: 44397
+  created_at: Fri, 26 Dec 2008 17:45:34 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: "[cookbook] http://is.gd/dzKL Christopher Sexton - Fixed link_to in application"
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1079579679
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Fri, 26 Dec 2008 17:41:05 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+- text: "[cookbook] http://is.gd/dzKJ Christopher Sexton - Freezing to rails 2.1.1"
+  from_user: fuzzymonk
+  to_user_id: 
+  id: 1079579667
+  iso_language_code: en
+  from_user_id: 44397
+  created_at: Fri, 26 Dec 2008 17:41:03 +0000
+  profile_image_url: http://s3.amazonaws.com/twitter_production/profile_images/30300852/TaylorandMcLauren-jabber_normal.jpg
+results_per_page: 15
+refresh_url: ?since_id=1083275701&q=from%3Afuzzymonk
+next_page: ?page=2&max_id=1083275701&q=from%3Afuzzymonk
+completed_in: 0.01725
+query: from%3Afuzzymonk
+page: 1
