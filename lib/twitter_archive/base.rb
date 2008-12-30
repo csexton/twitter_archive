@@ -1,3 +1,5 @@
+Dir.glob(File.dirname(__FILE__)+ '/backend/*.rb').each {|f| require f }
+
 module TwitterArchive
 
   class Base
@@ -5,7 +7,10 @@ module TwitterArchive
 
     def self.runner
       puts "Running Twitter Archiver"
-      TwitterArchive::Base.new.get_latest
+      ta = TwitterArchive::Base.new
+      ta.load_config
+      ta.get_latest
+      ta.save_config
     end
 
     def initialize(config_file = nil)
@@ -13,19 +18,14 @@ module TwitterArchive
     end
 
     def get_latest
-      load_config
-
       @config['accounts'].each do |account|
-        results = latest_from_account(account['name'], account['last_max_id'] || 0)
-        process_results(@config['backend'], results['results'])
-        puts "@@@@@@ #{results['max_id']}"
-        account['last_max_id'] = results['max_id']
+        results = fetch_from_account(account['name'], account['last_max_id'] || 0)
+        load_backend(config['backend']).archive(results['results'], config)
+        config['last_max_id'] = results['max_id']
       end
-
-      save_config
     end
 
-    def latest_from_account(name, last_max_id=0)
+    def fetch_from_account(name, last_max_id=0)
       Twitter::Search.new.from(name).since(last_max_id).fetch
     end
 
@@ -39,14 +39,9 @@ module TwitterArchive
       end
     end
 
-    def process_results(backend, results)
-      if(load File.dirname(__FILE__) + "/backend/yaml_archive.rb")
-        TwitterArchive::Backend::YamlArchive.archive(results)
-      else
-        raise "Unable to load backend"
-      end
+    def load_backend(backend_name)
+      eval "TwitterArchive::Backend::#{backend_name.capitalize}Archive.new"
     end
-
     
   end
 end
