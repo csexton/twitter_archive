@@ -1,31 +1,34 @@
-Dir.glob(File.dirname(__FILE__)+ '/backend/*.rb').each {|f| require f }
+require 'parsedate'
+Dir.glob(File.dirname(__FILE__)+ '/backends/*.rb').each {|f| require f }
 
 module TwitterArchive
 
   class Base
     attr_accessor :config_file, :config
 
-    def self.runner
-      puts "Running Twitter Archiver"
-      ta = TwitterArchive::Base.new
-      ta.load_config
-      ta.get_latest
-      ta.save_config
-    end
-
     def initialize(config_file = nil)
       @config_file = config_file || ENV['HOME'] + '/.twitter_archive.yml'
     end
 
     def get_latest
+      all_results = []
       @config['accounts'].each do |account|
-        results = fetch_from_account(account['name'], account['last_max_id'] || 0)
-        load_backend(config['backend']).archive(results['results'], config)
-        config['last_max_id'] = results['max_id']
+        twitter_response = fetch_from_account(account['name'], account['last_max_id'] || 0)
+        config['current_twitter_account'] = account['name']
+        puts "Collected #{twitter_response['results'].length} tweets from #{account['name']}"
+
+        all_results = all_results + twitter_response['results']
+        config['last_max_id'] = twitter_response['max_id']
       end
+
+      all_results.sort! {|a, b| a['created_at'] <=> b['created_at'] }
+
+      backend = load_backend(config['backend'])
+      backend.archive(all_results, config)
     end
 
     def fetch_from_account(name, last_max_id=0)
+      puts "last_max_id #{last_max_id}" 
       Twitter::Search.new.from(name).since(last_max_id).fetch
     end
 
@@ -40,7 +43,7 @@ module TwitterArchive
     end
 
     def load_backend(backend_name)
-      eval "TwitterArchive::Backend::#{backend_name.capitalize}Archive.new"
+      eval "TwitterArchive::Backends::#{backend_name.capitalize}Archive.new"
     end
     
   end

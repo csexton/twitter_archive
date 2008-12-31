@@ -1,0 +1,32 @@
+<%
+  # time format
+%>  
+<table>
+<tbody id="timeline_body">
+  <% results.each do |result| %>
+  <tr class="hentry status u-<%= result['from_user'] %>">
+      <td class="thumb vcard author">
+        <a href="http://twitter.com/<%= result['from_user'] %>" class="url">
+          <img alt="Tom Dougherty" class="photo fn" height="48" src="<%= result['profile_image_url'] %>" width="48" />
+        </a>
+      </td>
+      <td class="status-body">
+        <div>
+          <strong>
+          <a href="http://twitter.com/<%= result['from_user'] %>" title="<%= result['from_user'] %>">
+            <%= result['from_user'] %>
+          </a>
+          </strong> 
+          <span class="entry-content">
+            <%= result['text'] %>
+          </span> 
+          <span class="created-at" style="font-style: italic; font-size:smaller;">
+            <%= format_time(result['created_at']) %>
+          </span> 
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>

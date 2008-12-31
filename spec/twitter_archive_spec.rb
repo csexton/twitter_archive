@@ -4,7 +4,7 @@ describe TwitterArchive::Base do
   before(:each) do
     @ta = TwitterArchive::Base.new
     @ta.stub!(:fetch_from_account).and_return(YAML::load_file(
-      File.dirname(__FILE__) + '/fixtures/fuzzymonk_fetch.yml'))
+      File.dirname(__FILE__) + '/fixtures/twitter_response.yml'))
     @ta.stub!(:save_config).and_return(true)
     @ta.config_file = File.dirname(__FILE__) + '/../config/test.yml'
     # TODO stubb out backend
@@ -40,7 +40,7 @@ describe TwitterArchive::Base do
   end
 
   it "should load the yaml backend dynamically" do
-    @ta.load_backend('yaml').should be_an_instance_of TwitterArchive::Backend::YamlArchive
+    @ta.load_backend('yaml').should be_an_instance_of TwitterArchive::Backends::YamlArchive
   end
 
   it "should raise an error when loading an invalid backend" do

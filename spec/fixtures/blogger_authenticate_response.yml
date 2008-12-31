@@ -1,0 +1,30 @@
+--- !ruby/object:Net::HTTPOK 
+body: |
+  SID=DQAAAH4AAAAK5SScZgxeJS9BP03rjNP0EeUm0X8jvFKb6vXpRBMG-4aIkON6mbjjlqvpip7vxS8H_9_bNonFN-6PDEw8-xuTtszBogb7qRe4-gzhMc7dDX65VHEw-QmCmyYr5gGvWUP5x_5E0zh-XWef-viVNvbnCx7agwI-CCvBwAzl7fQQVw
+  LSID=DQAAAIAAAACZDlUEEuBRdQt9oEgJI2rjL9PJUNLnoDPTQA0duvmtRf3cxhh5DDcPXpfGI6tF-2K7-8ZHubK_4FiShCGhoKTE6d4vzTs0SWz5Itk8MpF_qZoye7AwCb3YVG4tgjALpI0RNl8SEuWTg2Jtiqn2So2mlxzivHeOv8rAE-s01p1qHA
+  Auth=DQAAAH8AAACZDlUEEuBRdQt9oEgJI2rjL9PJUNLnoDPTQA0duvmtRf3cxhh5DDcPXpfGI6tF-2J0oYw6koUPpBpn3QOJoJ3ps7lCYCqwPeCc64e265o4UyYgEYFivgbDrI7akWGSkmVvO2hFw6NGxZyGx6-MrKSKFph4MgORs57vPRnrj2UjJw
+
+body_exist: true
+code: "200"
+header: 
+  cache-control: 
+  - no-cache, no-store
+  x-content-type-options: 
+  - nosniff
+  expires: 
+  - Mon, 01-Jan-1990 00:00:00 GMT
+  date: 
+  - Wed, 31 Dec 2008 20:50:14 GMT
+  content-type: 
+  - text/plain
+  server: 
+  - GFE/1.3
+  content-length: 
+  - "563"
+  pragma: 
+  - no-cache
+http_version: "1.1"
+message: OK
+read: true
+socket: 
+

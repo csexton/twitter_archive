@@ -1,9 +1,8 @@
 module TwitterArchive
-  module Backend
+  module Backends
     class YamlArchive
       def archive(results, opts=nil)
-        puts "Archiving to YAML"
-        results.each {|p| puts p['text']}
+        results.to_yaml
       end
     end
   end
