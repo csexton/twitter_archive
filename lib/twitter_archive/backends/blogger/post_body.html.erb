@@ -1,26 +1,26 @@
 <%
   # time format
 %>  
-<table>
-<tbody id="timeline_body">
+<table class="twitter">
+<tbody class="twitter">
   <% results.each do |result| %>
-  <tr class="hentry status u-<%= result['from_user'] %>">
-      <td class="thumb vcard author">
+  <tr class="twitter-status u-<%= result['from_user'] %>">
+      <td class="">
         <a href="http://twitter.com/<%= result['from_user'] %>" class="url">
-          <img alt="Tom Dougherty" class="photo fn" height="48" src="<%= result['profile_image_url'] %>" width="48" />
+          <img alt="Tom Dougherty" class="twitter-avatar" height="48" src="<%= result['profile_image_url'] %>" width="48" />
         </a>
       </td>
-      <td class="status-body">
+      <td class="twitter-body">
         <div>
           <strong>
-          <a href="http://twitter.com/<%= result['from_user'] %>" title="<%= result['from_user'] %>">
+          <a href="http://twitter.com/<%= result['from_user'] %>" class="twitter-user" title="<%= result['from_user'] %>">
             <%= result['from_user'] %>
           </a>
           </strong> 
-          <span class="entry-content">
+          <span class="twitter-text">
             <%= result['text'] %>
           </span> 
-          <span class="created-at" style="font-style: italic; font-size:smaller;">
+          <span class="twitter-date" style="font-style: italic; font-size:smaller;">
             <%= format_time(result['created_at']) %>
           </span> 
         </div>
