@@ -35,7 +35,7 @@ describe TwitterArchive::Backends::BloggerArchive do
   end
 
   it "should format time like google" do
-    @ba.format_time("Sun, 28 Dec 2008 23:38:46 +0000").should eql "11:38PM 12/28/2008"
+    @ba.format_time("Sun, 28 Dec 2008 23:38:46 +0000").should eql "12/28/2008 at 11:38PM"
   end
 
   

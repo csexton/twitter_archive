@@ -12,14 +12,17 @@ module TwitterArchive
 
     def get_latest
       all_results = []
+      last_max_id = 0
       @config['accounts'].each do |account|
-        twitter_response = fetch_from_account(account['name'], account['last_max_id'] || 0)
+        twitter_response = fetch_from_account(account['name'], config['last_max_id'] || 0)
         config['current_twitter_account'] = account['name']
         puts "Collected #{twitter_response['results'].length} tweets from #{account['name']}"
 
         all_results = all_results + twitter_response['results']
-        config['last_max_id'] = twitter_response['max_id']
+        last_max_id =  twitter_response['max_id']
       end
+
+      config['last_max_id'] = last_max_id
 
       all_results.sort! {|a, b| a['created_at'] <=> b['created_at'] }
 
