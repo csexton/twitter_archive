@@ -1,22 +1,5 @@
 # .gitignore
-tags
-filenametags
 .DS_Store
 log/*.log
 tmp/**/*
 /**/*.swp
-config/database.yml
-db/*.sqlite3
-db/schema.rb
-
-# /cache/
-/cache/*
-
-# /log/
-/log/*
-
-# /sessions/
-/sessions/*
-
-# /tmp/
-/tmp/*
