@@ -4,29 +4,66 @@
 
 == DESCRIPTION:
 
-Twitter Archive is a little utility gem that will enables archiving twitter history.
+An archiving utility for Twitter.  
+
+I use my blog as a way to chronicle the things in my life, and I noticed with the introduction of Twitter into my normal routine I found that I was not blogging as much.  What I wanted to be able to do is incorporate the twitters into my blog timeline. And while I was able to do some JavaScript trickery to display the twitters on my blog, they were not *in* the blog.  Now if I ever want to go back and look up exactly what day my son got his second tooth, I can do so by digging through the blog archives. 
+
+twitter_archive supports multiple backends.  I use Blogger, so I have support for that, as well as a very simple yaml archive backend that was intended for testing, but would provide a pretty good (and easy to parse) plan text backup of Twitter.
+
 
 == FEATURES/PROBLEMS:
 
-Archive your twitter messages.
+Archive your Twitter messages.
 
 == SYNOPSIS:
 
+=== YAML ARCHIVE BACKEND:
+
 This requires a config file placed in the user's home directory:
 
-~/twitter_archive.yml
-	backend: yaml
-	accounts:
-	  - name: jnunemaker
-	    last_max_id: 0
-	  - name: fuzzymonk
-	    last_max_id: 0
+Example ~/twitter_archive.yml for use with the yaml archive backend:
 
-FIX: You can setup twitter_archive as a cron job?
+	accounts: 
+	- name: fuzzymonk
+	- name: amperecat
+	- name: jnunemaker
+	yaml_file: /home/your-user-name/twitter_archive/posts.yml
+
+You can enter mutiple twitter accounts, and it will simply interate through them. You should know that twitter_archive will make seperate requests for each account, so unles you have been {IP whitelisted}[http://twitter.com/help/request_whitelisting] by Twitter you can hit their rate limits pretty easily.
+
+=== BLOGGER ARCHIVE BACKEND:
+
+This requires a config file placed in the user's home directory:
+
+Example ~/twitter_archive.yml for use with the Blogger archive backend:
+
+	accounts: 
+	- name: fuzzymonk
+	blogger_user: blogger-user # Normally your gmail address
+	blogger_pass: blogger-password 
+	blogger_title: Twitter # The title you want for you blog post
+	blogger_id: 1234567891234567890 # 
+	backend: blogger
+
+To find your Blogger Blog ID refer to the {Blogger Help Center}[http://help.blogger.com/bin/answer.py?hl=en&answer=42191]
+
+twitter_archive was intended to be run as a cron job, prolly once a day. It will post in a digest format, collecting all the twitters into one blog post. 
 
 == INSTALL:
 
-* FIX: (sudo gem install twitter_archive)
+Get the gem:
+
+	sudo gem install twitter_archive
+
+Edit crontab to add twitter_archive:
+
+	$ crontab -e
+
+Then Add a line like the following:
+
+	0 0  *    *   *    twitter_archive > /home/your-user-name/logs/twitter_archive.log 
+
+This will run everyday at midnight. You can leave off the "> /home/.../twitter_archive.log" if you don't want to keep logs.
 
 == LICENSE:
 
