@@ -24,14 +24,14 @@ module TwitterArchive
 
       config['last_max_id'] = last_max_id
 
-      all_results.sort! {|a, b| a['created_at'] <=> b['created_at'] }
+      all_results.sort! {|a, b| b['created_at'] <=> a['created_at'] }
 
       backend = load_backend(config['backend'])
+
       backend.archive(all_results, config)
     end
 
     def fetch_from_account(name, last_max_id=0)
-      puts "last_max_id #{last_max_id}" 
       Twitter::Search.new.from(name).since(last_max_id).fetch
     end
 
