@@ -29,7 +29,7 @@ Example ~/twitter_archive.yml for use with the yaml archive backend:
 	- name: jnunemaker
 	yaml_file: /home/your-user-name/twitter_archive/posts.yml
 
-You can enter mutiple twitter accounts, and it will simply interate through them. You should know that twitter_archive will make seperate requests for each account, so unles you have been \<a href="http://twitter.com/help/request_whitelisting">IP whitelisted\</a> by Twitter you can hit their rate limits pretty easily.
+You can enter mutiple twitter accounts, and it will simply interate through them. You should know that twitter_archive will make seperate requests for each account, so unles you have been {IP whitelisted}[http://twitter.com/help/request_whitelisting] by Twitter you can hit their rate limits pretty easily.
 
 === BLOGGER ARCHIVE BACKEND:
 
