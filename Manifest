@@ -1,6 +1,8 @@
 bin/twitter_archive
-CHANGELOG
+config/example.yml
 config/test.yml
+History
+joe
 lib/twitter_archive/backends/blogger/base.rb
 lib/twitter_archive/backends/blogger/blogger.rb
 lib/twitter_archive/backends/blogger/post_body.html.erb
@@ -26,4 +28,5 @@ spec/spec.opts
 spec/spec_helper.rb
 spec/twitter_archive_spec.rb
 tasks/rspec.rake
+tmp/test_yaml_archive.yml
 twitter_archive.gemspec

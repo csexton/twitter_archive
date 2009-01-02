@@ -1,21 +1,5 @@
-#!/usr/bin/env ruby 
-
-# == Synopsis 
-#   Twitter Archive Utility
-#
-# == Usage 
-#   twitter_archive [options]
-#
-#   For help see http://github.com/csexton/twitter_archive/
-#
-# == Options
-#   -h, --help          Displays help message
-#   -v, --version       Display the version, then exit
-#   -V, --verbose       Verbose output
-#   TO DO - add additional options
-
 require 'optparse'
-require 'rdoc/usage'
+require File.dirname(__FILE__) + '/rdoc_readme'
 
 class Logger
   def format_message(severity, timestamp, progname, msg)
@@ -39,19 +23,13 @@ module TwitterArchive
       OptionParser.new do |opts|
         opts.summary_width = 25
 
-        opts.banner = "twitter_archive (#{TwitterArchive::VERSION})\n\n",
-                      "usage: twitter_archive \n",
-                      "       twitter_archive --help\n",
-                      "       twitter_archive --version\n"
-
-        opts.separator ""
-
         opts.on('-v', '--version') do 
           puts "twitter_archive (#{TwitterArchive::VERSION})\n\n"
           exit
         end
         opts.on('-h', '--help') do
-          puts "twitter_archive (#{TwitterArchive::VERSION})\n\n"
+          #RDoc::usage() #exits app 
+          RDocReadme.rdoc_usage('usage', 'options')
           exit
         end
         opts.on('-V', '--verbose') do
@@ -70,6 +48,5 @@ module TwitterArchive
 
       end.parse!
     end
-   
   end
 end

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{twitter_archive}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Christohper Sexton"]
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email = %q{csexton@gmail.com}
   s.executables = ["twitter_archive"]
   s.extra_rdoc_files = ["bin/twitter_archive", "lib/twitter_archive/backends/blogger/base.rb", "lib/twitter_archive/backends/blogger/blogger.rb", "lib/twitter_archive/backends/blogger/post_body.html.erb", "lib/twitter_archive/backends/blogger/README", "lib/twitter_archive/backends/blogger_archive.rb", "lib/twitter_archive/backends/yaml_archive.rb", "lib/twitter_archive/base.rb", "lib/twitter_archive/runner.rb", "lib/twitter_archive/version.rb", "lib/twitter_archive.rb", "LICENSE", "README.rdoc", "tasks/rspec.rake"]
-  s.files = ["bin/twitter_archive", "config/test.yml", "History", "lib/twitter_archive/backends/blogger/base.rb", "lib/twitter_archive/backends/blogger/blogger.rb", "lib/twitter_archive/backends/blogger/post_body.html.erb", "lib/twitter_archive/backends/blogger/README", "lib/twitter_archive/backends/blogger_archive.rb", "lib/twitter_archive/backends/yaml_archive.rb", "lib/twitter_archive/base.rb", "lib/twitter_archive/runner.rb", "lib/twitter_archive/version.rb", "lib/twitter_archive.rb", "LICENSE", "Manifest", "Rakefile", "README.rdoc", "script/console", "script/destroy", "script/generate", "spec/backends/blogger_archive_spec.rb", "spec/backends/yaml_archive_spec.rb", "spec/fixtures/blogger_authenticate_response.yml", "spec/fixtures/twitter_response.yml", "spec/spec.opts", "spec/spec_helper.rb", "spec/twitter_archive_spec.rb", "tasks/rspec.rake", "twitter_archive.gemspec"]
+  s.files = ["bin/twitter_archive", "config/example.yml", "config/test.yml", "History", "joe", "lib/twitter_archive/backends/blogger/base.rb", "lib/twitter_archive/backends/blogger/blogger.rb", "lib/twitter_archive/backends/blogger/post_body.html.erb", "lib/twitter_archive/backends/blogger/README", "lib/twitter_archive/backends/blogger_archive.rb", "lib/twitter_archive/backends/yaml_archive.rb", "lib/twitter_archive/base.rb", "lib/twitter_archive/runner.rb", "lib/twitter_archive/version.rb", "lib/twitter_archive.rb", "LICENSE", "Manifest", "Rakefile", "README.rdoc", "script/console", "script/destroy", "script/generate", "spec/backends/blogger_archive_spec.rb", "spec/backends/yaml_archive_spec.rb", "spec/fixtures/blogger_authenticate_response.yml", "spec/fixtures/twitter_response.yml", "spec/spec.opts", "spec/spec_helper.rb", "spec/twitter_archive_spec.rb", "tasks/rspec.rake", "tmp/test_yaml_archive.yml", "twitter_archive.gemspec"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/csexton/twitter_archive}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Twitter_archive", "--main", "README.rdoc"]

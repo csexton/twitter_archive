@@ -1,4 +1,19 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby 
+
+# == Synopsis 
+#   Twitter Archive Utility
+#
+# == Usage 
+#   twitter_archive [options]
+#
+#   For help see http://github.com/csexton/twitter_archive/
+#
+# == Options
+#   -h, --help          Displays help message
+#   -v, --version       Display the version, then exit
+#   -V, --verbose       Verbose output
+#   TO DO - add additional options
+
 require "#{File.dirname(__FILE__)}/../lib/twitter_archive"
 
 TwitterArchive::Runner::runner

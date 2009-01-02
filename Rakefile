@@ -14,6 +14,7 @@ Echoe.new(ProjectName, TwitterArchive::VERSION) do |p|
   p.extra_deps      = [['twitter', '>= 0.4'], ['hpricot', '>= 0.6']]
   p.need_tar_gz     = false
   p.docs_host       = "http://github.com/csexton/twitter_archive/wikis"
+  
 end
  
 desc 'Preps the gem for a new release'
