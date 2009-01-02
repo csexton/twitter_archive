@@ -1,6 +1,6 @@
 bin/twitter_archive
+CHANGELOG
 config/test.yml
-History
 lib/twitter_archive/backends/blogger/base.rb
 lib/twitter_archive/backends/blogger/blogger.rb
 lib/twitter_archive/backends/blogger/post_body.html.erb
@@ -11,9 +11,8 @@ lib/twitter_archive/base.rb
 lib/twitter_archive/runner.rb
 lib/twitter_archive/version.rb
 lib/twitter_archive.rb
+LICENSE
 Manifest
-Manifest.txt
-PostInstall.txt
 Rakefile
 README.rdoc
 script/console
@@ -27,3 +26,4 @@ spec/spec.opts
 spec/spec_helper.rb
 spec/twitter_archive_spec.rb
 tasks/rspec.rake
+twitter_archive.gemspec
