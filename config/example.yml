@@ -1,0 +1,8 @@
+--- 
+backend: blogger
+blogger_title: Twitter
+blogger_user: blogger-login-email
+blogger_pass: blogger-password
+blogger_id: 1234567890123456789
+accounts: 
+- name: your-twitter-name

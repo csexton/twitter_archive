@@ -1,4 +1,5 @@
 require 'parsedate'
+require 'logger'
 Dir.glob(File.dirname(__FILE__)+ '/backends/*.rb').each {|f| require f }
 
 module TwitterArchive
@@ -8,6 +9,9 @@ module TwitterArchive
 
     def initialize(config_file = nil)
       @config_file = config_file || ENV['HOME'] + '/.twitter_archive.yml'
+
+      log_file ||= STDOUT
+      @log = Logger.new(log_file)
     end
 
     def get_latest
@@ -16,7 +20,7 @@ module TwitterArchive
       @config['accounts'].each do |account|
         twitter_response = fetch_from_account(account['name'], config['last_max_id'] || 0)
         config['current_twitter_account'] = account['name']
-        puts "Collected #{twitter_response['results'].length} tweets from #{account['name']}"
+        @log.info "Collected #{twitter_response['results'].length} tweets from #{account['name']}"
 
         all_results = all_results + twitter_response['results']
         last_max_id =  twitter_response['max_id']
@@ -28,7 +32,7 @@ module TwitterArchive
 
       backend = load_backend(config['backend'])
 
-      backend.archive(all_results, config)
+      @log.info backend.archive(all_results, config)
     end
 
     def fetch_from_account(name, last_max_id=0)
