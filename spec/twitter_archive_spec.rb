@@ -7,7 +7,7 @@ describe TwitterArchive::Base do
       File.dirname(__FILE__) + '/fixtures/twitter_response.yml'))
     @ta.stub!(:save_config).and_return(true)
     @ta.config_file = File.dirname(__FILE__) + '/../config/test.yml'
-    # TODO stubb out backend
+    # TODO stub out backend
   end
 
   it "should create an instance" do
