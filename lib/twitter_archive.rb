@@ -8,7 +8,6 @@ require 'twitter'
 $:.unshift(File.dirname(__FILE__))
 require 'twitter_archive/base'
 require 'twitter_archive/runner'
+require 'twitter_archive/version'
 
-module TwitterArchive
-  VERSION = '0.0.1'
-end
+module TwitterArchive; end

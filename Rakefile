@@ -1,28 +1,30 @@
-%w[rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
-require File.dirname(__FILE__) + '/lib/twitter_archive'
-
-# Generate all the Rake tasks
-# Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.new('twitter_archive', TwitterArchive::VERSION) do |p|
-  p.developer('FIXME full name', 'FIXME email')
-  p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
-  p.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
-  p.rubyforge_name       = p.name # TODO this is default value
-  p.extra_deps         = [
-    ['jnunemaker-twitter','>=0.4.0'],
-    ['GData','>=0.0.4']
-  ]
-  p.extra_dev_deps = [
-    ['newgem', ">= #{::Newgem::VERSION}"]
-  ]
-  
-  p.clean_globs |= %w[**/.DS_Store tmp *.log]
-  path = (p.rubyforge_name == p.name) ? p.rubyforge_name : "\#{p.rubyforge_name}/\#{p.name}"
-  p.remote_rdoc_dir = File.join(path.gsub(/^#{p.rubyforge_name}\/?/,''), 'rdoc')
-  p.rsync_args = '-av --delete --ignore-errors'
+ProjectName = 'twitter_archive'
+ 
+require 'rubygems'
+require 'rake'
+require 'echoe'
+require 'spec/rake/spectask'
+require "lib/#{ProjectName}/version"
+ 
+Echoe.new(ProjectName, TwitterArchive::VERSION) do |p|
+  p.description     = "Twitter archive utility"
+  p.url             = "http://github.com/csexton/twitter_archive"
+  p.author          = "Christohper Sexton"
+  p.email           = "csexton@gmail.com"
+  p.extra_deps      = [['twitter', '>= 0.4'], ['hpricot', '>= 0.6']]
+  p.need_tar_gz     = false
+  p.docs_host       = "http://github.com/csexton/twitter_archive/wikis"
 end
-
-require 'newgem/tasks' # load /tasks/*.rake
+ 
+desc 'Preps the gem for a new release'
+task :prepare do
+  %w[manifest build_gemspec].each do |task|
+    Rake::Task[task].invoke
+  end
+end
+ 
 Dir['tasks/**/*.rake'].each { |t| load t }
 
-task :default => [:spec, :features]
+Rake::Task[:default].prerequisites.clear
+task :default => :spec
+
