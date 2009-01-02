@@ -10,6 +10,7 @@ lib/twitter_archive/backends/blogger/README
 lib/twitter_archive/backends/blogger_archive.rb
 lib/twitter_archive/backends/yaml_archive.rb
 lib/twitter_archive/base.rb
+lib/twitter_archive/rdoc_readme.rb
 lib/twitter_archive/runner.rb
 lib/twitter_archive/version.rb
 lib/twitter_archive.rb
