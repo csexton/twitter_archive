@@ -2,7 +2,6 @@ bin/twitter_archive
 config/example.yml
 config/test.yml
 History
-joe
 lib/twitter_archive/backends/blogger/base.rb
 lib/twitter_archive/backends/blogger/blogger.rb
 lib/twitter_archive/backends/blogger/post_body.html.erb
@@ -24,6 +23,7 @@ script/generate
 spec/backends/blogger_archive_spec.rb
 spec/backends/yaml_archive_spec.rb
 spec/fixtures/blogger_authenticate_response.yml
+spec/fixtures/blogger_post_response.yml
 spec/fixtures/twitter_response.yml
 spec/spec.opts
 spec/spec_helper.rb
