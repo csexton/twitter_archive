@@ -8,7 +8,7 @@ module TwitterArchive
         if twitter_results.length > 0
           blogger = GData::Blogger.new(opts['blogger_id'])
           blogger.authenticate(opts['blogger_user'], opts['blogger_pass'])
-          blogger.entry(opts['blogger_title'] || 'Twitter', format_post(twitter_results))
+          blogger.entry(opts['blogger_title'] || 'Twitter', format_post(twitter_results), ['twitter'])
           "Posting to blogger id #{opts['blogger_id']}, user #{opts['blogger_user']}"
         else
           "Nothing to post to blogger"

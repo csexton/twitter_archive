@@ -52,7 +52,7 @@ module GData
     end
 
     # Creates a new entry with the given title and body
-    def entry(title, body)
+    def entry(title, body, labels=[])
       x = Builder::XmlMarkup.new :indent => 2
       @entry = x.entry 'xmlns' => 'http://www.w3.org/2005/Atom' do
         x.title title, 'type' => 'text'
@@ -60,6 +60,9 @@ module GData
           x.div 'xmlns' => 'http://www.w3.org/1999/xhtml' do
             x << body
           end
+        end
+        labels.each do |label|
+          x.category 'scheme' => "http://www.blogger.com/atom/ns#", 'term' => label
         end
       end
       
