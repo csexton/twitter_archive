@@ -10,13 +10,20 @@ end
 module TwitterArchive
   class Runner
     def self.runner
-      ta = TwitterArchive::Base.new
-      ta.load_config
+      @ta = TwitterArchive::Base.new
 
       parse_options 
 
-      puts ta.get_latest
-      ta.save_config
+      unless File.exists? @ta.config_file
+        puts "Not config file found at '#{@ta.config_file}'"
+        puts "See 'twitter_archive --help' for more details"
+        exit
+      end
+
+      @ta.load_config
+
+      puts @ta.get_latest
+      @ta.save_config
     end
 
     def self.parse_options
