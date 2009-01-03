@@ -21,8 +21,7 @@ module TwitterArchive
       end
 
       @ta.load_config
-
-      puts @ta.get_latest
+      @ta.get_latest
       @ta.save_config
     end
 
@@ -54,8 +53,6 @@ module TwitterArchive
         end
         opts.on('-cFILE', '--config FILE') do |file|
           @ta.config_file = file
-          puts "Config file: #{file}"
-          exit
         end
 
       end.parse!
