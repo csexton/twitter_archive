@@ -8,13 +8,14 @@ describe TwitterArchive::Backends::BloggerArchive do
 
   before(:each) do
     @ba = TwitterArchive::Backends::BloggerArchive.new
-    @config = YAML::load_file(ENV['HOME'] + '/.twitter_archive.yml')
     @twitter_response = YAML::load_file File.dirname(__FILE__) +'/../fixtures/twitter_response.yml'
 
     if(ENV['TEST_BLOGGER'])
-      Net::HTTPS.stub!(:post_form).and_return(YAML::load_file(
-        File.dirname(__FILE__) + '/../../fixtures/blogger_authenticate_response.yml'))
-      GData
+      @config = YAML::load_file(ENV['HOME'] + '/.twitter_archive.yml')
+      GData::Base.stub!(:authenticate).and_return(YAML::load_file(
+        File.dirname(__FILE__) + '/../fixtures/blogger_authenticate_response.yml'))
+    else
+      @config = YAML::load_file(File.dirname(__FILE__) + '/../../config/test.yml')
     end
 
   end
@@ -24,6 +25,9 @@ describe TwitterArchive::Backends::BloggerArchive do
   end
 
   it "should test post to blogger" do
+    GData::Base.stub!(:post).and_return(YAML::load_file(
+      File.dirname(__FILE__) + '/../fixtures/blogger_authenticate_response.yml'))
+
     @config['blogger_title'] = "Testing twitter_archive"
     @ba.archive(@twitter_response['results'], @config)
   end

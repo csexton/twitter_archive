@@ -52,6 +52,11 @@ module TwitterArchive
           end
           exit
         end
+        opts.on('-cFILE', '--config FILE') do |file|
+          @ta.config_file = file
+          puts "Config file: #{file}"
+          exit
+        end
 
       end.parse!
     end

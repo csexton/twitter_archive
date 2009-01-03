@@ -56,7 +56,7 @@ module GData
     end
 
     def post(path, entry)
-      http.post(path, entry, @headers)
+      ret = http.post(path, entry, @headers)
     end
 
     def put(path, entry)

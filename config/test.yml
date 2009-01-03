@@ -3,4 +3,8 @@ accounts:
 - name: fuzzymonk
 - name: jnunemaker
 backend: yaml
+blogger_pass: secret 
+blogger_title: Twitter
+blogger_user: blogger@example.user
+blogger_id: 1234567890123456789
 
