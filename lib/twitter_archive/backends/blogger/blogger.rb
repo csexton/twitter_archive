@@ -51,8 +51,13 @@ module GData
       put(path, entry.to_s)
     end
 
-    # Creates a new entry with the given title and body
-    def entry(title, body, labels=[])
+    # Creates a new entry with the given +title+ and +body+
+    # +options+ can contain the following:
+    #   :labels - an array of labels (tags) to apply to the post
+    #   :draft - boolean to save the post as a draft (not published)
+    #
+    def entry(title, body, options = {})
+      options = { :labels => [], :draft => false}.merge(options)
       x = Builder::XmlMarkup.new :indent => 2
       @entry = x.entry 'xmlns' => 'http://www.w3.org/2005/Atom' do
         x.title title, 'type' => 'text'
@@ -61,11 +66,17 @@ module GData
             x << body
           end
         end
-        labels.each do |label|
+        options[:labels].each do |label|
           x.category 'scheme' => "http://www.blogger.com/atom/ns#", 'term' => label
         end
+        if options[:draft]
+          x.app:control, 'xmlns:app' =>'http://www.w3.org/2007/app' do
+            x << "<app:draft>yes</app:draft>" # The whitespace that builder 
+                                              # adds around 'yes' was resulting
+                                              # in a bad request.
+          end
+        end
       end
-      
       path = "/feeds/#{@blog_id}/posts/default"
       post(path, @entry)
     end
